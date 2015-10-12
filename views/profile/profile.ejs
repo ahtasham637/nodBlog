@@ -1,0 +1,27 @@
+<% include ../header.ejs %>
+<!-- Posts -->
+<div class="col-xs-8 col-xs-8-width">
+
+    <!-- including Post Box -->
+    <%if(session.user === title){%>
+    <% include ../postbox/postbox.ejs %>
+    <%}%>
+
+    <div id="posts-list">
+
+    </div>
+
+</div> <!-- col end -->
+
+<% include ../sidebar.ejs %>
+</div><!-- sidebar end -->
+</div> <!-- /container -->
+
+<% include ../scripts.ejs %>
+<script src="/javascripts/profile.js"></script>
+<%if(session.user === title){%>
+<script src="/javascripts/postBox.js"></script>
+<%}else {%>
+<script src="/javascripts/follow.js"></script>
+<%}%>
+<% include ../footer.ejs %>

@@ -1,0 +1,82 @@
+<!-- Sidebar -->
+<div class="col-xs-4 col-xs-4-width">
+    <div class="col-xs-4-custom">
+        <ul class="media-list">
+            <li class="media">
+                <a class="media-left" href="#">
+                    <img src="/photo/pub/nb/<%=userProfile.Photo%>?dim=80" alt="...">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading inherit-font black"><a href="/<%=userProfile.Username%>"><%=userProfile.Name%></a></h5>
+                    <div class="user-profession"><%=userProfile.Profession%> at <%=userProfile.Organisation%></div>
+                    <% if (session.user !== userProfile.Username) {%>
+                    <div class="sidebar-button-padding-top">
+                        <button type="button" class="btn btn-labeled btn-danger btn-xs followBtn" id="followBtnn">
+                            <span class="btn-label">
+                                <i id="follow-icon" class="glyphicon <%=userProfile.isFollowing ? 'glyphicon-ok' : 'glyphicon-star-empty'%>" aria-hidden="true"></i></span>
+                            <strong id="followTx"><%=userProfile.isFollowing ? 'Following' : 'Follow'%></strong>
+                        </button>
+                    </div>
+                    <%} else {%>
+                    <div class="sidebar-button-padding-top">
+                        <button type="button" class="btn btn-labeled btn-primary btn-xs" id="editProfileBtn">
+                            <span class="btn-label">
+                                <i id="follow-icon" class="glyphicon glyphicon-edit" aria-hidden="true"></i></span>
+                            <strong id="followTx">Update Info</strong>
+                        </button>
+                    </div>
+                    <%}%>
+                </div>
+            </li>
+        </ul>
+        <div id="hobby">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-glass" aria-hidden="true"></i> <strong>Hobby</strong></div>
+            <div class="col-xs-8 details-custom"><%= typeof userProfile.Hobby!='undefined' ? userProfile.Hobby : '' %>&nbsp;</div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="username">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> <strong>Username</strong></div>
+            <div class="col-xs-8 details-custom">@<%=userProfile.Username%>&nbsp;</div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="posts">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-edit" aria-hidden="true"></i> <strong>Posts</strong></div>
+            <div class="col-xs-8 details-custom"><%if(userProfile.TotalPosts > 0){%><%=userProfile.TotalPosts%> Post(s)<%}else {%>No Posts<%}%></div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="followers">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-heart" aria-hidden="true"></i> <strong>Followers</strong></div>
+            <div class="col-xs-8 details-custom"><%if(userProfile.TotalFollowers > 0){%><%=userProfile.TotalFollowers%> Follower(s)<%}else {%>No Followers<%}%></div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="about">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> <strong>About</strong></div>
+            <div class="col-xs-8 details-custom"><%=userProfile.About%>&nbsp;</div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="Category">
+            <%var cats = 0;%>
+            <div class="col-xs-4 details-custom details-custom-title-width">
+                <span class="label label-default custom-sidebar-label" aria-hidden="true" id="totalCats">
+                    <%=userProfile.TotalCategories%></span> <strong>Category</strong></div>
+            <div class="col-xs-8 details-custom">
+                <%if(categories.length > 0){%>
+                <ul class="list-unstyled" style="margin-bottom: 0px;" id="sideCategories">
+                    <% categories.forEach(function(category){%>
+                    <li><a href="/<%=userProfile.Username%>/<%=category.CatUrl%>"><%=category.CatName%></a></li>
+
+                    <%})%>
+                </ul>
+                <%}else{%>
+                <ul class="list-unstyled" style="margin-bottom: 0px;" id="sideCategories">
+                    <li>No Categories</li>
+                </ul>
+                <%}%>
+            </div>
+        </div>
+        <div class="custom-clearfix">&nbsp;</div>
+        <div id="location">
+            <div class="col-xs-4 details-custom details-custom-title-width"><i class="glyphicon glyphicon-globe" aria-hidden="true"></i> <strong>Location</strong></div>
+            <div class="col-xs-8 details-custom location"><%=userProfile.Location%>&nbsp;</div>
+        </div>
+    </div>

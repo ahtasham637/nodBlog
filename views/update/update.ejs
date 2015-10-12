@@ -1,0 +1,93 @@
+<% include ../header.ejs %>
+<!-- update -->
+<div class="col-xs-8 col-xs-8-width">
+
+    <div id="update-form" class="col-xs-8-custom normal-cursor">
+        <form class="form-horizontal" method="post" action="/update" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Update your information</legend>
+                <div class="form-group">
+                    <label for="frmFullName" class="col-sm-2 col-xs-2 control-label">Full name</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" id="frmFullName" name="Name" placeholder="Eg: Brian Johnson" value="<%=userProfile.Name%>" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmProfession" class="col-sm-2 col-xs-2 control-label">Profession</label>
+                    <div class="col-sm-4 col-xs-4">
+                        <select class="form-control" id="selectProfession" name="selectProfession" onchange="changeProfState()">
+                            <option value="professional">Professional</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <input type="text" class="form-control" id="frmProfession" name="Profession" placeholder="Eg: Electrical Engineer" value="<%=userProfile.Profession%>" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmOrganisation" class="col-sm-2 col-xs-2 control-label" id="at">Company</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" id="frmOrganisation" name="Organisation" placeholder="Eg: Masology, Inc" value="<%=userProfile.Organisation%>" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmHobby" class="col-sm-2 col-xs-2 control-label">Hobby</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" id="frmHobby" name="Hobby" placeholder="Eg: Tennis, Football, Reading etc" autocomplete="off" value="<%=userProfile.Hobby%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmAbout" class="col-sm-2 col-xs-2 control-label">About</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <textarea class="form-control" id="frmAbout" name="About" aria-autocomplete="off"
+                                  placeholder="Eg: I am hardcore blogger with great skills of engaging people in discussion"><%=userProfile.About%></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmLocation" class="col-sm-2 col-xs-2 control-label">Location</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <input type="text" value="<%=userProfile.Location%>" class="form-control" id="frmLocation" name="Location" placeholder="Where are you?"
+                               autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frmLocation" class="col-sm-2 col-xs-2 control-label">Photo</label>
+                    <div class="col-sm-10 col-xs-10">
+                        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                            <div class="form-control fileinput-custom" data-trigger="fileinput">
+                                <i class="glyphicon glyphicon-picture fileinput-exists"></i>
+                                <span class="fileinput-filename">Select photo</span>
+                            </div>
+                            <span class="input-group-addon btn btn-default btn-file">
+                                <span class="fileinput-new">Select file</span>
+                                <span class="fileinput-exists">Change</span>
+                                <input type="file" name="Photo" accept="image/*">
+                            </span>
+                            <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-xs-offset-2 col-sm-10 col-xs-10">
+                        <button type="submit" class="btn btn-labeled btn-primary btn-sm pull-right">
+                            <span class="btn-label">
+                                <i class="glyphicon glyphicon-check" aria-hidden="true"></i>
+                            </span>
+                                <strong>Update Information</strong>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div> <!-- end -->
+
+<% include ../sidebar.ejs %>
+</div><!-- sidebar end -->
+</div> <!-- /container -->
+
+<% include ../scripts.ejs %>
+<script src="/javascripts/update.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="/javascripts/gmap.js"></script>
+<% include ../footer.ejs %>

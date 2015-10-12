@@ -1,0 +1,62 @@
+<% include ../header.ejs %>
+<!-- Posts -->
+    <div class="col-xs-8 col-xs-8-width">
+
+        <div id="posts-list">
+            <%if(posts.length > 0) {%>
+            <% posts.forEach(function(entry){ %>
+            <div class="col-xs-8-custom" onclick="location.href='/<%=entry.Username%>/<%=entry.CatUrl%>/<%=entry.Url%>';">
+                <div>
+                    <ul class="media-list">
+                        <li class="media">
+                            <a class="media-left" href="#">
+                                <img src="/photo/pub/nb/<%=(entry.ProfilePhoto) ? entry.ProfilePhoto : '5fce02648a742badb5905601b22098c9.png'%>?dim=60" alt="pencil" class="img-circle">
+                            </a>
+                            <div class="media-body m-body">
+                                <h4 class="media-heading"><%=entry.Title%></h4>
+                                <div class="post-details">
+                                    <div class="col-xs-4 zero-padding-left">
+                                        <span>By <a href="/<%=entry.Username%>"><%=entry.Name%></a></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="glyphicon glyphicon-time" aria-hidden="true"></i> <%=entry.Time%>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="hr" />
+                <div class="description">
+                    <p><%=entry.Details%></p>
+                    <div>
+                        <% if(entry.Photo){%><img src="/photo/pub/nb/<%=entry.Photo%>?dim=950x534" alt="" class="img-thumbnail"><%}%>
+                    </div>
+                </div>
+            </div>
+            <%});} else {%>
+            <div class="col-xs-8-custom">
+                <div>
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body blogtitle">
+                                There are no posts in this category.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <%}%>
+        </div>
+
+    </div> <!-- col end -->
+
+    <% include ../sidebar.ejs %>
+
+</div><!-- sidebar end -->
+</div> <!-- /container -->
+
+<% include ../scripts.ejs %>
+<script src="/javascripts/postsByCategory.js"></script>
+<script src="/javascripts/follow.js"></script>
+<% include ../footer.ejs %>

@@ -1,0 +1,35 @@
+<% include ../header.ejs %>
+<!-- Posts -->
+    <div class="col-xs-8 col-xs-8-width">
+
+        <!-- including Post Box -->
+        <%if(session.user){%>
+        <% include ../postbox/postbox.ejs %>
+        <%}%>
+
+        <div id="posts-list">
+
+        </div>
+
+    </div> <!-- col end -->
+
+<% include ../sidebar.ejs %>
+        <div class="col-xs-4-custom-home" style="padding-bottom: 5px">
+            <div class="suggestion-top">
+                <strong><i class="glyphicon glyphicon-volume-up" aria-hidden="true"></i> Suggestions</strong>
+            </div>
+            <hr class="custom-home-hr" />
+            <div class="suggestion-ul" id="suggested-people">
+
+            </div>
+        </div>
+    </div><!-- sidebar end -->
+</div> <!-- /container -->
+
+<% include ../scripts.ejs %>
+<%if(session.user){%>
+<script src="/javascripts/postBox.js"></script>
+<script src="/javascripts/home.js"></script>
+<script src="/javascripts/follow.js"></script>
+<%}%>
+<% include ../footer.ejs %>

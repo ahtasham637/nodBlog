@@ -1,0 +1,59 @@
+<div id="postbox" class="col-xs-8-post">
+    <form id="post-form" method="post" action="" enctype="multipart/form-data">
+        <div id="writePost" class="write-post">
+                <span class="write-tag">
+                    <i class="glyphicon glyphicon-edit glyph-edit-color" aria-hidden="true"></i>
+                    <span class="media-heading inherit-font margin-top-write h6">Write a Post</span>
+                </span>
+                <span class="Add-photo-tag" onclick="showImageModal()">
+                    <i class="glyphicon glyphicon-picture glyph-photo-color" aria-hidden="true"></i>
+                    <span class="media-heading inherit-font margin-top-write h6" >Add Photo</span>
+                </span>
+        </div>
+        <!-- Image Upload Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width: 232px;">
+                <div class="modal-content">
+                    <div class="modal-header image-upload-modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        &nbsp;
+                    </div>
+                    <div class="modal-body">
+                        <div class="fileinput fileinput-new pos-relative" data-provides="fileinput">
+                            <span id="dissmissImage" class="glyphicon glyphicon-remove-circle fileinput-exists modal-image-dismiss" data-dismiss="fileinput"></span>
+                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; margin-left: auto; margin-right: auto;">
+                                <img src="/images/thumb.png" alt="">
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                            <div>
+                                <span class="btn btn-success btn-file btn-sm"><span class="fileinput-new"><strong>Select Photo</strong></span><span class="fileinput-exists"><strong>Change</strong></span><input type="file" name="photo" id="postPhoto" accept="image/*"></span>
+                                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal"><strong>ok</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box-filed" class="write-box-body">
+            <div class="form-group">
+                <input type="text" id="postTitle" name="Title" class="form-control simplebox" placeholder="Title" autocomplete="off" required="required">
+                <textarea id="postDetails" name="Details" class="form-control simple-textarea-box" placeholder="Write details" required="required"></textarea>
+            </div>
+        </div>
+        <div class="write-box-footer">
+            <div class="col-xs-4 zero-padding-left cat-sel-option">
+                <select class="form-control input-sm" id="postCategory" name="Category">
+                    <%categories.forEach(function(category){%>
+                    <option value="<%=category.CatUrl%>"><%=category.CatName%></option>
+                    <%})%>
+                </select>
+            </div>
+            <button type="submit" id="submitPost" class="btn btn-labeled btn-primary btn-sm">
+                            <span class="btn-label">
+                                <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+                            </span>
+                <strong>Post</strong>
+            </button>
+        </div>
+    </form>
+</div>

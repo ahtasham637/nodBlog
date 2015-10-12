@@ -1,0 +1,626 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+body {
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 970px;
+  background-color: #EAEAEA;
+}
+textarea {
+  resize: none;
+}
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  width: 970px;
+  max-width: none !important;
+}
+
+/* Demonstrate the grids */
+.col-xs-4-custom {
+  padding-top: 15px;
+  padding-bottom: 26px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 8px;
+  background-color: #eee;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(105, 90, 128, 0.2);
+  border-radius: 4px;
+}
+
+.col-xs-8-custom {
+  padding-top: 15px;
+  padding-bottom: 26px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 8px;
+  background-color: #eee;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(79, 78, 81, 0.22);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.normal-cursor {
+  cursor: auto;
+}
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/* navbar color */
+.navbar-inverse {
+  background-color: #323232;
+  border-color: #060606;
+}
+/* navbar font color change */
+.navbar-inverse .navbar-nav>li>a {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #A5E7FF;
+}
+
+/* navbar head color */
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+
+/* navbar a:focus color and background change */
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+  color: #ffffff;
+  background-color: #4BB5DB;
+}
+
+/* dropdown color change */
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+  color: #A5E7FF;
+  background-color: #4C4C4C;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+  padding: 13px 15px;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+.navbar-nav.navbar-right {
+  float: right;
+}
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}
+
+/* Undo form expansion */
+.navbar-form {
+  float: left;
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
+.navbar-form .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.navbar-form .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar-form .form-control-static {
+  display: inline-block;
+}
+
+.navbar-form .input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn,
+.navbar-form .input-group .form-control {
+  width: auto;
+}
+
+.navbar-form .input-group > .form-control {
+  width: 100%;
+}
+
+.navbar-form .control-label {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.navbar-form .radio,
+.navbar-form .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.navbar-form .radio label,
+.navbar-form .checkbox label {
+  padding-left: 0;
+}
+
+.navbar-form .radio input[type="radio"],
+.navbar-form .checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0;
+}
+
+.navbar-form .has-feedback .form-control-feedback {
+  top: 0;
+}
+.h6 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+h5, .h5 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+h4, .h4 {
+  font-size: 35px;
+}
+
+.media-heading {
+  margin-top:0px;
+  margin-bottom: 1px;
+  font-family: "MuseoSlabLight";
+  color: rgb(5, 5, 5);
+}
+.inherit-font {
+  font-family: inherit;
+  color: inherit;
+}
+.custom-min-width {
+  min-width: 140px;
+}
+
+.write-box-glyph-width {
+  width:15%
+}
+.margin-top-write {
+  margin-top: 3px;
+}
+.glyph-edit-color {
+  color:rgb(4, 121, 163);
+}
+.glyph-photo-color {
+  color:rgb(163, 4, 76);
+}
+.user-profession {
+  font-size: 12px;
+  color: rgb(105, 104, 104);
+}
+
+.details-custom {
+  padding-left: 0px;
+  font-size: 13px;
+  padding-right: 0px;
+  width: 66.5%;
+}
+.details-custom-title-width {
+  width:33.5%;
+}
+.custom-clearfix {
+  line-height: 6px;
+}
+.location{
+  color: rgb(105, 104, 104);
+}
+
+.col-xs-8-width{
+  padding-left: 0px;
+  width: 64.666667%;
+  padding-right: 0px;
+}
+.col-xs-4-width{
+  width: 35.333333%;
+  padding-right: 8px;
+}
+
+.blogtitle {
+  min-width: 573px;
+}
+
+.post-details {
+  font-size: 12px;
+  padding-top: 2px;
+  color: rgb(123, 123, 123);
+  font-weight: bold;
+  padding-left: 2px;
+}
+.post-details a {
+  color: rgb(123, 123, 123);
+}
+.post-details a:hover {
+  color: rgb(123, 123, 123);
+}
+
+.zero-padding-left{
+  padding-left: 0px;
+}
+
+.description {
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+
+.hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.addon-custom {
+  background-color: rgb(75, 165, 197);
+  border-color: rgb(2, 140, 189);
+}
+
+.input-search {
+  min-width: 451px;
+}
+
+.glyphicon-search {
+  color: #ffffff;
+}
+.auth-buttons {
+  font-weight: bold;
+  background-color: rgb(75, 165, 197);
+  border-color: rgb(2, 140, 189);
+}
+.facebook-button {
+  font-weight: bold;
+  background-color: #3b5998;
+  border-color: #3b5998;
+  border-radius: 1px;
+}
+.facebook-button:hover{
+  font-weight: bold;
+  background-color: #3b5998;
+  border-color: #3b5998;
+  border-radius: 1px;
+}
+
+.twitter-button {
+  font-weight: bold;
+  background-color: #1C93CF;
+  border-color: #1C93CF;
+  border-radius: 1px;
+}
+.twitter-button:hover {
+  font-weight: bold;
+  background-color: #1C93CF;
+  border-color: #1C93CF;
+  border-radius: 1px;
+}
+
+.pinterest-button {
+  font-weight: bold;
+  background-color: #C92228;
+  border-color: #C92228;
+  border-radius: 1px;
+}
+.pinterest-button:hover {
+  font-weight: bold;
+  background-color: #C92228;
+  border-color: #C92228;
+  border-radius: 1px;
+}
+
+.sidebar-button-padding-top {
+  padding-top: 4px;
+}
+
+.sidebar-button-padding-top .custom {
+  border-radius: 2px;
+}
+
+.post-page {
+  font-size: 45px;
+}
+
+.page-post-details {
+  font-size: 20px;
+  padding-top: 2px;
+  color: rgb(23, 148, 34);
+  font-weight: bold;
+  padding-left: 2px;
+}
+.page-post-colx4-width {
+  width: 29.333333%;
+}
+.frm-category {
+  margin-right: 2px;
+  margin-bottom: 6px;
+  line-height: 22px;
+  display: inline-block;
+  padding: 0px 6px 0px 4px;
+  background-color: #035B7B;
+}
+.custom-glyph {
+  top: 2px;
+  left: 2px;
+  cursor: pointer;
+}
+.custom-sidebar-label {
+  background-color: #333;
+}
+.file-button {
+  display: none;
+}
+.fileinput-custom {
+  color: #999999;
+}
+
+.simplebox,.simplebox:focus {
+  border:none;
+  border-radius: 0px;
+  border-bottom: 1px solid #EEE;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+.simple-textarea-box, .simple-textarea-box:focus {
+  border:none;
+  border-radius: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.col-xs-8-post {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(105, 90, 128, 0.2);
+  border-radius: 4px;
+}
+.write-post {
+  padding: 15px 4px 9px 4px;
+  border-bottom: 1px solid #EEE;
+  margin: 0px 15px 0px 15px;
+}
+.write-box-body {
+  padding: 6px 0px 0px 0px;
+  margin: 0px 15px 0px 15px;
+}
+.write-box-footer {
+  padding: 15px 15px 15px 15px;
+  background-color: #F9F9F9;
+  text-align: right;
+}
+.cat-sel-option {
+  background-color: #F7F8F9;
+  font-weight: bold;
+}
+.write-tag {
+  border-right: 1px solid #E5E5E5;
+  padding-right: 8px;
+}
+.Add-photo-tag {
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #3b5998;
+  cursor: pointer;
+}
+.image-upload-modal-header {
+  padding: 7px;
+}
+.modal-image-dismiss {
+  cursor: pointer;
+  text-align: right;
+  top: 8px;
+  right: 7px;
+  color: rgb(176, 176, 176);
+  font-size: 15px;
+  position: absolute;
+}
+.pos-relative {
+  position: relative;
+}
+.auth-modal-background {
+  background: #F0F0F0;
+}
+.show-post-details-padding {
+  padding: 6px 0px 0px 0px;
+}
+.show-post-title-col {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 6px;
+}
+.caret-col-xs {
+  text-align: right;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.caret-custom {
+  border: none;
+  padding: 2px;
+  border-radius: 0px;
+}
+.caret-custom:focus {
+  border: none;
+  background: #F5F5F5;
+  padding: 2px;
+  border-radius: 0px;
+}
+.dropdown-menu-custom-ul {
+  min-width: 97px;
+  font-size: 13px;
+}
+.navbar-brand {
+  font-size: 15px;
+}
+.black a {
+  color: #000;
+}
+.black a:hover {
+  color: #000;
+}
+.post-title-width {
+  width: 89.333333%;
+  min-width: 556px;
+}
+.caret-width {
+  width: 1.666667%;
+  float: right;
+}
+
+.m-body {
+  width: 100%;
+}
+.col-xs-4-custom-home {
+  padding-bottom: 26px;
+  margin-bottom: 8px;
+  background-color: #eee;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(105, 90, 128, 0.2);
+  border-radius: 4px;
+}
+.suggestion-top {
+  padding: 7px;
+  font-size: 11px;
+  color: rgb(105, 104, 104);
+}
+.custom-home-hr {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.suggestion-ul {
+  padding: 5px 15px 0px 15px;
+}
+.custom-search-button {
+  background-color: rgb(75, 165, 197);
+  border-color: rgb(2, 140, 189);
+}
+.custom-search-button:hover {
+  background-color: rgb(2, 140, 189);
+  border-color: rgb(2, 140, 189);
+}
+.custom-search-button:focus {
+  background-color: rgb(75, 165, 197);
+  border-color: rgb(2, 140, 189);
+}
+.highlighted {
+  background: rgb(255, 252, 0);
+}

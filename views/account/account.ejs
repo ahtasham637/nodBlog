@@ -1,0 +1,39 @@
+<% include ../header.ejs %>
+    <!-- account -->
+    <div class="col-xs-8 col-xs-8-width">
+
+        <div id="account-form" class="col-xs-8-custom normal-cursor">
+            <form class="form-horizontal" method="post" action="/account">
+                <fieldset>
+                    <legend>Change Password</legend>
+                    <div class="form-group">
+                        <label for="frmOldPassword" class="col-sm-3 col-xs-3 control-label">Old Password</label>
+                        <div class="col-sm-8 col-xs-8">
+                            <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Old Password" required="required" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="frmNewPassword" class="col-sm-3 col-xs-3 control-label" id="at">New Password</label>
+                        <div class="col-sm-8 col-xs-8">
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password" required="required" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-xs-offset-3 col-sm-8 col-xs-8">
+                            <button type="submit" class="btn btn-labeled btn-primary btn-sm pull-right">
+                            <span class="btn-label">
+                                <i class="glyphicon glyphicon-check" aria-hidden="true"></i>
+                            </span>
+                                <strong>Change Password</strong>
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div> <!-- end -->
+    <% include ../sidebar.ejs %>
+</div><!-- sidebar end -->
+</div> <!-- /container -->
+<% include ../scripts.ejs %>
+<% include ../footer.ejs %>
